@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/Radio-Lars-Dehairs/',
+    base: '/Radio-Lars-Dehairs/', //nothing here just for the Github push
 
     server: {
       port: 3000,
