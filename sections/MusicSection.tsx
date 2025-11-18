@@ -211,33 +211,46 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ playlist }) => {
   const currentSong = useMemo(() => {
     return playlist[songIndex];
   }, [songIndex, playlist]);
-  
-  const fetchAlbumArt = useCallback(async (song: Song) => {
-    if (!song) return;
-    try {
-        const searchTerm = encodeURIComponent(
-  `${normalize(song.artist)} ${normalize(song.album)}`
-);
+  // --- Helper: normalize song/album names for better search ---
+const normalize = (s: string) =>
+  s
+    .replace(/\(.*?\)/g, '') // remove (Deluxe), (Remastered)
+    .replace(/[-_]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
-const response = await fetch(
-  `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=albumTerm&limit=1`
-);
+// --- Fetch album art from iTunes (more precise) ---
+const fetchAlbumArt = useCallback(async (song: Song) => {
+  if (!song) return;
 
-        const response = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&entity=song&limit=1`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        
-        const data = await response.json();
-        if (data.results && data.results.length > 0) {
-            const artworkUrl = data.results[0].artworkUrl100.replace('100x100bb.jpg', '600x600bb.jpg');
-            setAlbumArtUrl(artworkUrl);
-        } else {
-            setAlbumArtUrl(null);
-        }
-    } catch (error) {
-      console.error("Failed to fetch album art:", error);
+  try {
+    const searchTerm = encodeURIComponent(
+      `${normalize(song.artist)} ${normalize(song.album)}`
+    );
+
+    const response = await fetch(
+      `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=albumTerm&limit=1`
+    );
+
+    if (!response.ok) throw new Error('Failed to fetch album art');
+
+    const data = await response.json();
+
+    if (data.results?.length > 0) {
+      const artworkUrl = data.results[0].artworkUrl100?.replace(
+        '100x100bb.jpg',
+        '600x600bb.jpg'
+      );
+      setAlbumArtUrl(artworkUrl ?? null);
+    } else {
       setAlbumArtUrl(null);
     }
-  }, []);
+  } catch (error) {
+    console.error('Album art fetch failed:', error);
+    setAlbumArtUrl(null);
+  }
+}, []);
+
 
   useEffect(() => {
     if (currentSong) {
