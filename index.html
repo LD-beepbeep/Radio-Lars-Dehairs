@@ -45,62 +45,56 @@
         background-attachment: fixed;
         overflow-y: scroll;
       }
-      #aurora-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        opacity: 0.6;
-        --aurora-color-1: #8ec5fc;
-        --aurora-color-2: #e0c3fc;
-        --aurora-color-3: #facc15;
-      }
-      .aurora-blur {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        filter: blur(120px);
-      }
-      .aurora-shape-1 {
-        background: var(--aurora-color-1);
-        border-radius: 50%;
-        width: 400px;
-        height: 400px;
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        animation: aurora-anim 15s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate;
-      }
-      .aurora-shape-2 {
-        background: var(--aurora-color-2);
-        border-radius: 50%;
-        width: 350px;
-        height: 350px;
-        position: absolute;
-        bottom: 10%;
-        right: 10%;
-        animation: aurora-anim 18s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate-reverse;
-      }
-      .aurora-shape-3 {
-        background: var(--aurora-color-3);
-        border-radius: 50%;
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        animation: aurora-anim 20s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate;
-      }
-      @keyframes aurora-anim {
-        0% {
-          transform: scale(1) rotate(0deg) translateX(0px);
-        }
-        100% {
-          transform: scale(1.1) rotate(5deg) translateX(25px);
-        }
+      /* Softer, subtler aurora */
+#aurora-background {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: -1;
+opacity: 0.25; /* more subtle */
+--aurora-color-1: #b7d9ff;
+--aurora-color-2: #ead6ff;
+--aurora-color-3: #ffe56a;
+}
+
+
+.aurora-blur {
+height: 100%;
+width: 100%;
+position: absolute;
+filter: blur(160px); /* softer diffusion */
+}
+
+
+.aurora-shape-1,
+.aurora-shape-2,
+.aurora-shape-3 {
+border-radius: 50%;
+position: absolute;
+opacity: 0.6; /* reduced intensity */
+animation: aurora-anim 22s ease-in-out infinite alternate;
+}
+
+
+.aurora-shape-1 {
+background: var(--aurora-color-1);
+width: 320px;
+height: 320px;
+top: 15%;
+left: 8%;
+}
+
+
+.aurora-shape-2 {
+background: var(--aurora-color-2);
+width: 280px;
+height: 280px;
+bottom: 12%;
+right: 12%;
+animation-duration: 26s;
+}
       }
 
       /* Scrollbar Hide */
@@ -156,6 +150,13 @@
   <script type="module" crossorigin src="/Radio-Lars-Dehairs/assets/index-DTKMEuwA.js"></script>
 </head>
   <body>
+    <div id="aurora-background">
+<div class="aurora-blur">
+<div class="aurora-shape-1"></div>
+<div class="aurora-shape-2"></div>
+<div class="aurora-shape-3"></div>
+</div>
+</div>
     <div id="root"></div>
   </body>
 </html>
