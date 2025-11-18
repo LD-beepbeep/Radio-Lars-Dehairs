@@ -215,7 +215,14 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ playlist }) => {
   const fetchAlbumArt = useCallback(async (song: Song) => {
     if (!song) return;
     try {
-        const searchTerm = encodeURIComponent(`${song.artist} ${song.album} ${song.title}`);
+        const searchTerm = encodeURIComponent(
+  `${normalize(song.artist)} ${normalize(song.album)}`
+);
+
+const response = await fetch(
+  `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=albumTerm&limit=1`
+);
+
         const response = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&entity=song&limit=1`);
         if (!response.ok) throw new Error('Network response was not ok');
         
