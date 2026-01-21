@@ -2,7 +2,7 @@ import { Link, WorkExperience, Skill, Education, Project, Language, Song } from 
 
 export const personalInfo = {
   name: 'Lars Dehairs',
-  profession: 'Radiomaker & Podcaster',
+  profession: 'Radiomaker, Podcaster, Web-Developer & Editor',
   location: 'Zottegem, Belgium',
   social: '@larsdehairs',
   email: 'radio.larsdehairs@outlook.com',
