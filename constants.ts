@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description: "A radio station based in Ghent, Belgium. I host a few shows on Boenkerz, including Headbang Hour, where it’s loud every two weeks on Wednesday from 17:00 to 18:00.",
     links: [
       { name: 'Website', url: 'https://boenkerz.be', icon: 'Website', description: 'Radio station Website', color: '#374151' },
-      { name: 'Headbang Hour Instagram', url: 'https://www.instagram.com/headbang_hour/?utm_source=ig_web_button_share_sheet', icon: 'Instagram', description: 'The radioprogram's Instagram!', color: ACCENT_COLOR },
+      { name: 'Headbang Hour Instagram', url: 'https://www.instagram.com/headbang_hour/?utm_source=ig_web_button_share_sheet', icon: 'Instagram', description: "The radioprogram's Instagram!", color: ACCENT_COLOR },
     ]
   }
 ];
