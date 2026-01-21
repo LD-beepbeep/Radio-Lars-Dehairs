@@ -31,7 +31,7 @@ export const ScissorsIcon: React.FC<IconProps> = ({ className }) => <i className
 export const BoltIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-bolt ${className}`} />;
 export const SlidersIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-sliders ${className}`} />;
 export const HeadphonesIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-headphones ${className}`} />;
-export const FileAltIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-file-alt ${className}`} />;
+export const CodeIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-code ${className}`} />;
 export const WaveSquareIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-wave-square ${className}`} />;
 export const BroadcastTowerIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-broadcast-tower ${className}`} />;
 export const RadioIcon: React.FC<IconProps> = ({ className }) => <i className={`fa-solid fa-radio ${className}`} />;
