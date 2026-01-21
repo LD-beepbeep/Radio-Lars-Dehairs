@@ -9,7 +9,7 @@ export const personalInfo = {
   avatar: 'https://i1.sndcdn.com/avatars-3IyrCUUQ66HX9j4I-yW6mHg-t240x240.jpg',
 };
 
-export const bio = "I’m Lars Dehairs, a radiomaker and podcaster from Zottegem, Belgium. I enjoy creating radio shows and podcasts that connect with people, whether it’s music, stories, or conversations that make someone’s day a bit better. Over the past few years, I’ve learned a lot from hands-on experience behind the mic, in the studio, and during live broadcasts. I like working with sound, exploring new ideas, and learning how to make each show a little better than the last.";
+export const bio = "Hi, I’m Lars. I make radio shows and podcasts based in Zottegem, Belgium. I’m usually behind a mic, behind a drum kit, or behind a screen. I love messing around with sound, music, and conversations that hopefully make someone’s day a bit better! I’ve learned most of what I know by just doing it: live radio, studio sessions, editing audio in Reaper, cutting video in DaVinci Resolve, and building stuff on the web. I like trying new ideas, experimenting, and seeing how I can make the next project cooler than the last!";
 
 const ACCENT_COLOR = '#0071e3';
 
@@ -23,7 +23,7 @@ export const personalLinks: Link[] = [
 export const projects: Project[] = [
   {
     name: 'Tom Tom Talks',
-    description: 'A podcast where drummers talk about their favorite drummers.',
+    description: 'A podcast where drummers talk about their favorite drummers!',
     links: [
       { name: 'Website', url: 'https://tomtomtalks.boenkerz.be/', icon: 'Website', description: 'Official podcast website', color: '#374151' },
       { name: 'Instagram', url: 'https://www.instagram.com/tom_tom_talks', icon: 'Instagram', description: "Podcast's Instagram", color: '#E4405F' },
@@ -34,10 +34,10 @@ export const projects: Project[] = [
   },
   {
     name: 'Boenkerz',
-    description: "A radio station based in Ghent, Belgium. Lars hosts several shows on Boenkerz, including 'De Pauzeknop', a show he hosts with Bas Bortolin",
+    description: "A radio station based in Ghent, Belgium. I host a few shows on Boenkerz, including Headbang Hour, where it’s loud every two weeks on Wednesday from 17:00 to 18:00.",
     links: [
       { name: 'Website', url: 'https://boenkerz.be', icon: 'Website', description: 'Radio station Website', color: '#374151' },
-      { name: 'Pauzeknop Email (Program)', url: 'mailto:boenkerz.pauzeknop@gmail.com', icon: 'Envelope', description: 'Contact my radio program', color: ACCENT_COLOR },
+      { name: 'Headbang Hour Instagram', url: 'https://www.instagram.com/headbang_hour/?utm_source=ig_web_button_share_sheet', icon: 'Instagram', description: 'The radioprogram's Instagram!', color: ACCENT_COLOR },
     ]
   }
 ];
@@ -48,9 +48,8 @@ export const workExperience: WorkExperience[] = [
     company: 'Boenkerz',
     period: '2022 – Present',
     tasks: [
-      'Presentatie 11–12u zaterdag — Boenkerz Gent',
-      'Presentatie Headbang Hour — time TBD',
-      'Presentatie De Pauzeknop — time TBD',
+      'Presentation 11–12h zaterdag — Boenkerz Gent',
+      'Presentation Headbang Hour — every 2 weeks, wednesday 17-18h',
     ],
   },
   {
@@ -65,7 +64,23 @@ export const workExperience: WorkExperience[] = [
     role: 'Radiomaker',
     company: 'Urgent.fm via Blooshoofd',
     period: '2022 – 2024',
-    tasks: ['Presentatie zaterdag: 12–13u'],
+    tasks: ['Presentatie zaterdag: 12–13u',
+    ],
+  },
+  {
+    role: 'Editor',
+    company: 'Freelance',
+    period: '2022 – Present',
+    tasks: [
+      'Editing audio in Reaper to turn sounds into cool fragments, and messing around in DaVinci Resolve to make fun reels!',
+    ],
+  },
+  {
+    role: 'Web-Dev',
+    company: 'Freelance',
+    period: '2022 – Present',
+    tasks: ['Making fun websites, usually for myself, but hey: you can totally contact me if you want one made',
+    ],
   },
 ];
 
@@ -76,7 +91,7 @@ export const skills: Skill[] = [
   { name: 'Improvisation', icon: 'Bolt', url: '#', color: ACCENT_COLOR },
   { name: 'Mixing', icon: 'Sliders', url: '#', color: ACCENT_COLOR },
   { name: 'Voice-over', icon: 'Headphones', url: '#', color: ACCENT_COLOR },
-  { name: 'Scripting', icon: 'FileAlt', url: '#', color: ACCENT_COLOR },
+  { name: 'Wed Developing', icon: 'Code', url: '#', color: ACCENT_COLOR },
   { name: 'Reaper', icon: 'WaveSquare', url: 'https://www.reaper.fm/', color: '#333333' },
   { name: 'Power Studio', icon: 'BroadcastTower', url: 'https://www.power-studio.nl/', color: '#ffc107' },
   { name: 'Zenon Media', icon: 'Radio', url: 'https://www.zenon-media.com/', color: '#d32f2f' },
@@ -102,8 +117,8 @@ export const education: Education[] = [
 ];
 
 export const nowPlayingPlaylist: Song[] = [
-    { title: "Imagine - Remastered 2010", artist: "John Lennon", album: "Imagine", duration: "03:07", spotifyId: "7pKfPomDEeI4TPT6EOYjn9" },
     { title: "Island In The Sun", artist: "Weezer", album: "Weezer", duration: "03:20", spotifyId: "2MLHyLy5z5l5YRp7momlgw" },
+    { title: "Imagine - Remastered 2010", artist: "John Lennon", album: "Imagine", duration: "03:07", spotifyId: "7pKfPomDEeI4TPT6EOYjn9" },
     { title: "Deep in the Willow", artist: "Knocked Loose", album: "Upon Loss Singles", duration: "03:31", spotifyId: "7KbfKTMX3wbQW5OJvIGRdg" },
     { title: "Japam", artist: "Botch", album: "An Anthology of Dead Ends", duration: "02:56", spotifyId: "6fsmhUf5ZsYlO1EhuewCIt" },
     { title: "Seeing Red", artist: "Architects", album: "The Sky, The Earth & All Between", duration: "03:40", spotifyId: "65qBr6ToDUjTD1RiE1H4Gl" },
